@@ -1,6 +1,6 @@
 import React from 'react';
 import Weather from './components/Weather';
-import './App.css';
+import Style from './Style.css';
 import Form from "./components/Form";
 
 
