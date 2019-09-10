@@ -1,21 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta charset="UTF-8">
 
-
-
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-
-    <title>React App</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   </head>
   <body>
-    <h3>test</h3>
-    <nav class="navbar navbar-default">
+
+    <nav class="navbar navbar-default" id="nav_bar">
       <div class="container">
         <div class="navbar-header">
             <a href="" class="navbar-brand navbar-link">
@@ -26,12 +19,22 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
-
-            </button>
+           </button>
         </div>
+
+        <div class="collapse navbar-collapse" id="navcol">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="current.html">Current</a></li>
+                <li><a href="forecast.html">Forecast</a></li>
+                <li><a href="">Open Weather Map</a></li>
+              </ul>
+
+        </div>
+
       </div>
+
     </nav>
-    <div id="root"></div>
+
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
