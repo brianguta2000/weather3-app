@@ -1,7 +1,7 @@
 import React from "react";
 
 
-fetch("https://api.darksky.net/forecast/b72bd4877f90e589e5f492a71f88dcc8/37.8267,-122.4233")
+fetch("http://api.openweathermap.org/data/2.5/weather?q=London&units=metric&APPID=f2ec56db020648f18b8e19ae3fb1ac4d")
 
   .then(
 
