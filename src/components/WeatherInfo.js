@@ -1,79 +1,77 @@
-import React from "react";
+//import React from "react";
 
 
-class WeatherInfo extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      weatherData: {
-        temperature: null,
-        condition: null,
-        city: null
+//class WeatherInfo extends React.Component {
+  //constructor(props) {
+  //  super(props);
+  //  this.state = {
+    //  weatherData: {
+      //  temperature: null,
+      //  condition: null,
+      //  city: null
 
-      },
-      requestSuccessful: true
-    }
-    this.submitHandler = this.submitHandler.bind(this);
-  }
+    //  },
+    //  requestSuccessful: true
+  //  }
+  //  this.submitHandler = this.submitHandler.bind(this);
+//  }
 
-  componentDidMount() {
-    this.fetchWeatherData('Mumbai');
-  }
-fetchWeatherData(location) {
-    let scope = this;
-fetch("http://api.openweathermap.org/data/2.5/weather?q=Hartford&units=imperial&APPID=f2ec56db020648f18b8e19ae3fb1ac4d",
-    {mode: 'cors'})
-  .then(
-    function(response) {
-      return response.json();
-    }
-  )
-  .then(
-    function(response) {
-      scope.setState({
-        weatherData: {
-          temperature: response.main.temp,
-          condition: response.weather[0].main,
-          humidity: response.main.humidity,
-          city: response.name
-        },
-        requestSuccessful: true
-      });
-    }
-  )
-  .catch(
-  function(error) {
-    console.log(error);
-    scope.setState({
-      requestSuccessful: false
-    })
-  }
- );
-}
+//  componentDidMount() {
+  //  this.fetchWeatherData('Mumbai');
+//  }
+//fetchWeatherData(location) {
+  //  let scope = this;
+//fetch(''),
 
-submitHandler(e) {
-  e.preventDefault();
-  const cityInput = document.querySelector('#city');
-  let cityName = this.capitalize(cityInput.value);
-  this.fetchWeatherData(cityName);
-}
+  //.then(
+  //  function(response) {
+  //    return response.json();
+  //  }
+//  )
+//  .then(
+  //  function(response) {
+    //  scope.setState({
+      //  weatherData: {
+        //  temperature: response.main.temp,
+          //condition: response.weather[0].main,
+        //  humidity: response.main.humidity,
+      //    city: response.name
+    //    },
+    //    requestSuccessful: true
+  //    });
+  //  }
+//  )
+//  .catch(
+//  function(error) {
+  //  console.log(error);
+  //  scope.setState({
+    //  requestSuccessful: false
+  //  })
+//  }
+ //);
+//}
 
-capitalize(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
-}
+//submitHandler(e) {
+//  e.preventDefault();
+//  const cityInput = document.querySelector('#city');
+//  let cityName = this.capitalize(cityInput.value);
+//  this.fetchWeatherData(cityName);
+//}
 
-render() {
-if(this.state.requestSuccessful) {
-  return(
-    <div className="container">
-      <form onSubmit={this.submitHandler}>
-        <input type="text" id="city"/>
-        <input type="submit" value="Submit"/>
-      </form>
-    </div>
-  )
-}
-}
-};
+//capitalize(string) {
+  //return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+//}
 
-export default WeatherInfo;
+//render() {
+//if(this.state.requestSuccessful) {
+  //return(
+  //  <div className="container">
+
+  //  </div>
+//  )
+//}
+//}
+//};
+
+//export default WeatherInfo;
+//
