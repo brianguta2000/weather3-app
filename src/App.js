@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import WeatherInfo from "./components/WeatherInfo";
+
 import Forecast from "./components/Forecast";
 import{Route, Link} from 'react-router-dom';
-
+import { BrowserRouter as Router} from 'react-router-dom';
 
 
 function App() {
@@ -22,15 +22,17 @@ function App() {
               <span class="icon-bar"></span>
            </button>
         </div>
-
+        <Router>
         <div class="collapse navbar-collapse" id="navcol">
               <ul class="nav navbar-nav navbar-right" id="nav_list">
                 <li><a href="sign-in.html">Sign In</a></li>
-                <li><a href="">Open Weather Map</a></li>
+                <li><a href="http://www.openweathermap.org">Open Weather Map</a></li>
                 <li><Link to='/forecast'></Link></li>
                 <li><a href="http://api.openweathermap.org/data/2.5/weather?q=Hartford&units=imperial&APPID=f2ec56db020648f18b8e19ae3fb1ac4d" target="_blank">Forecast</a></li>
               </ul>
+              <Route path='/forecast' component={Forecast}/>
         </div>
+        </Router>
       </div>
     </nav>
 
@@ -51,10 +53,11 @@ function App() {
       <div class="col-sm-3" >Wed</div>
       <div class="col-sm-3" >Thur</div>
 
-    </div>
-    <Route path='/forecast' component={Forecast}/>
-    </div>
 
+
+    </div>
+  
+    </div>
   )
 };
 
