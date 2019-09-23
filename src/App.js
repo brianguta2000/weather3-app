@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
+import Forecast from './components/Forecast';
 
-import Forecast from "./components/Forecast";
 import{Route, Link} from 'react-router-dom';
 import { BrowserRouter as Router} from 'react-router-dom';
 
 
-function App() {
+function App () {
+
+
   return (
     <div className="App">
     <nav class="navbar navbar-default" id="nav_bar">
@@ -22,6 +24,10 @@ function App() {
               <span class="icon-bar"></span>
            </button>
         </div>
+        <form name="myForm" target="/Forecast">
+        <input type="text" name="fname"/>
+        <input type="submit" value="Submit"/>
+        </form>
         <Router>
         <div class="collapse navbar-collapse" id="navcol">
               <ul class="nav navbar-nav navbar-right" id="nav_list">
@@ -29,6 +35,7 @@ function App() {
                 <li><a href="http://www.openweathermap.org">Open Weather Map</a></li>
                 <li><Link to='/forecast'></Link></li>
                 <li><a href="http://api.openweathermap.org/data/2.5/weather?q=Hartford&units=imperial&APPID=f2ec56db020648f18b8e19ae3fb1ac4d" target="_blank">Forecast</a></li>
+
               </ul>
               <Route path='/forecast' component={Forecast}/>
         </div>
@@ -52,13 +59,11 @@ function App() {
       <div class="col-sm-3" >Tue</div>
       <div class="col-sm-3" >Wed</div>
       <div class="col-sm-3" >Thur</div>
-
-
-
     </div>
-  
+
     </div>
   )
+
 };
 
 
