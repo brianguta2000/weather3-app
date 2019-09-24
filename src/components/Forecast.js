@@ -2,40 +2,53 @@ import React, {Component} from 'react';
 
 const API_KEY = '77747c91fe2a9528c08bf35da91b048c';
 
-class Forecast extends Component {
+class Forecast extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      city:"undefined",
-    };
+      value: 'city'};
 
     this.handleSubmit=this.handleSubmit.bind(this);
   }
   handleSubmit(e){
     e.preventDefault();
-  }
+    const city = e.target.elements.city.value;
 
-  updateWeather(){
-    const {city} = this.state;
+    const api_call = fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
+    const data = api_call.json();
+    if (city) {
+      this.setState({
+          temperature: data.main.temp,
+          city: data.name
+});
+} else {
+     this.setState({
+       temperature: undefined,
+       city: undefined,
+});
   }
+}
+
 
 
 
   render(){
-    const {city} = this.state
-    const api_call = fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
-    return (
-  <div>
-     city={this.state.city}
+      return (
 
-  <form name="myForm" onSubmit={this.handleSubmit}>
-  <input type="text" name="fname"/>
-  <input type="submit" value="Submit"/>
+  <form onSubmit={ this.handleSubmit}>
+  <label>
+  <input type="text" value={this.state.city} onChange={this.handleSubmit} />
+  </label>
+  <input type="submit" value="City"/>
   </form>
-</div>
-  );
+
+
+
+
+    );
   }
 
 };
+
 
 export default Forecast;
