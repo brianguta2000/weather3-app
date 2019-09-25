@@ -16,7 +16,7 @@ class Forecast extends React.Component {
     error: undefined
   }
 
-  //getWeather is a method we'll use to make the api call
+
   getWeather = async (e) => {
 
     const city = e.target.elements.city.value;
@@ -46,14 +46,14 @@ class Forecast extends React.Component {
     return (
 
       <div>
-         <div className="wrapper">
-          <div className="main">
-            <div className="container">
-              <div className="row">
-                <div className="col-xs-5 title-container">
+         <div className="">
+          <div className="">
+            <div className="">
+              <div className="">
+                <div className="">
 
                 </div>
-                <div className="col-xs-7 form-container">
+                <div className="container col-sm-2 col-sm-offset-5">
                 <WeatherInfo loadWeather={this.getWeather} />
                   <Title
                     temperature={this.state.temperature}
