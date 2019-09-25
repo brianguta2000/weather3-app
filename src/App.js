@@ -4,7 +4,9 @@ import Forecast from './components/Forecast';
 import Landing from './components/Landing';
 import{Route, Link} from 'react-router-dom';
 import { BrowserRouter as Router} from 'react-router-dom';
-import WeatherInfo from "./components/WeatherInfo";
+import Title from './components/Title';
+import WeatherInfo from './components/WeatherInfo';
+
 
 function App () {
 
