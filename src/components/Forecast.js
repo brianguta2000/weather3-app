@@ -13,6 +13,8 @@ class Forecast extends React.Component {
     country: undefined,
     humidity: undefined,
     description: undefined,
+    pressure: undefined,
+    temp_min: undefined,
     error: undefined
   }
 
@@ -22,7 +24,7 @@ class Forecast extends React.Component {
     const city = e.target.elements.city.value;
     const country = e.target.elements.country.value;
     e.preventDefault();
-    const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}`);
+    const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=imperial`);
     const response = await api_call.json();
     console.log(response);
     if(city && country){
@@ -32,6 +34,8 @@ class Forecast extends React.Component {
         country: response.sys.country,
         humidity: response.main.humidity,
         description: response.weather[0].description,
+        pressure: response.main.pressure,
+        temp_min: response.main.temp_min,
         error: ""
       })
     }else{
@@ -46,14 +50,8 @@ class Forecast extends React.Component {
     return (
 
       <div>
-         <div className="">
-          <div className="">
-            <div className="">
-              <div className="">
-                <div className="">
 
-                </div>
-                <div className="container col-sm-2 col-sm-offset-5">
+                <div className="container col-sm-12 col-sm-offset-3">
                 <WeatherInfo loadWeather={this.getWeather} />
                   <Title
                     temperature={this.state.temperature}
@@ -61,14 +59,15 @@ class Forecast extends React.Component {
                     country={this.state.country}
                     humidity={this.state.humidity}
                     description={this.state.description}
+                    pressure={this.state.pressure}
+                    temp_min={this.state.temp_min}
                     error={this.state.error}
+
                   />
+
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
+    </div>
 
     )
   }

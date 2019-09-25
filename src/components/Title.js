@@ -20,6 +20,12 @@ class Title extends React.Component{
                 }
 
                 {
+                    this.props.temp_min && <p className="weather__key">Temperature_Min:
+                        <span className="weather__value">  {this.props.temp_min}</span>
+                    </p>
+                }
+
+                {
                     this.props.humidity && <p className="weather__key">Humidity:
                         <span className="weather__value">  {this.props.humidity}</span>
                     </p>
@@ -28,6 +34,12 @@ class Title extends React.Component{
                 {
                     this.props.description && <p className="weather__key">Conditions:
                         <span className="weather__value">  {this.props.description}</span>
+                    </p>
+                }
+
+                {
+                    this.props.pressure && <p className="weather__key">Pressure:
+                        <span className="weather__value">  {this.props.pressure}</span>
                     </p>
                 }
 
