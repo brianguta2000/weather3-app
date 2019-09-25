@@ -4,7 +4,7 @@ import Forecast from './components/Forecast';
 import Landing from './components/Landing';
 import{Route, Link} from 'react-router-dom';
 import { BrowserRouter as Router} from 'react-router-dom';
-
+import WeatherInfo from "./components/WeatherInfo";
 
 function App () {
 
@@ -35,7 +35,7 @@ function App () {
                 <li><a href="http://api.openweathermap.org/data/2.5/weather?q=Hartford&units=imperial&APPID=f2ec56db020648f18b8e19ae3fb1ac4d" target="_blank">Forecast</a></li>
 
               </ul>
-            
+
         </div>
 
       </div>
