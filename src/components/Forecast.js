@@ -24,7 +24,7 @@ class Forecast extends React.Component {
     const city = e.target.elements.city.value;
     const country = e.target.elements.country.value;
     e.preventDefault();
-    const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=imperial`);
+    const api_call = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=imperial`);
     const response = await api_call.json();
     console.log(response);
     if(city && country){
