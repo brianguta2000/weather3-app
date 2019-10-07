@@ -4,19 +4,22 @@ import Title from './Title';
 
 const API_KEY = '77747c91fe2a9528c08bf35da91b048c';
 
+
 class Forecast extends React.Component {
 
   state = {
-
     temperature: undefined,
     city: undefined,
     country: undefined,
     humidity: undefined,
     description: undefined,
-    pressure: undefined,
     temp_min: undefined,
+    visibility: undefined,
+    speed: undefined,
     error: undefined
   }
+
+
 
 
   getWeather = async (e) => {
@@ -34,8 +37,9 @@ class Forecast extends React.Component {
         country: response.sys.country,
         humidity: response.main.humidity,
         description: response.weather[0].description,
-        pressure: response.main.pressure,
         temp_min: response.main.temp_min,
+        visibility: response.visibility,
+        speed: response.wind.speed,
         error: ""
       })
     }else{
@@ -46,12 +50,12 @@ class Forecast extends React.Component {
   }
 
   render() {
-
+console.log(this.state.temperature)
     return (
 
       <div>
 
-                <div className="container col-sm-12 col-sm-offset-3">
+                <div className="text row-center container col-sm-12 col-sm-offset-4">
                 <WeatherInfo loadWeather={this.getWeather} />
                   <Title
                     temperature={this.state.temperature}
@@ -59,10 +63,10 @@ class Forecast extends React.Component {
                     country={this.state.country}
                     humidity={this.state.humidity}
                     description={this.state.description}
-                    pressure={this.state.pressure}
                     temp_min={this.state.temp_min}
+                    visibility={this.state.visibility}
+                    speed={this.state.speed}
                     error={this.state.error}
-
                   />
 
                 </div>

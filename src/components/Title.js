@@ -14,32 +14,38 @@ class Title extends React.Component{
                 }
 
                 {
-                    this.props.temperature && <p className="weather__key">Temperature:
-                        <span className="weather__value">  {this.props.temperature}</span>
-                    </p>
-                }
-
-                {
-                    this.props.temp_min && <p className="weather__key">Temperature_Min:
-                        <span className="weather__value">  {this.props.temp_min}</span>
-                    </p>
-                }
-
-                {
-                    this.props.humidity && <p className="weather__key">Humidity:
-                        <span className="weather__value">  {this.props.humidity}</span>
-                    </p>
-                }
-
-                {
                     this.props.description && <p className="weather__key">Conditions:
                         <span className="weather__value">  {this.props.description}</span>
                     </p>
                 }
 
                 {
-                    this.props.pressure && <p className="weather__key">Pressure:
-                        <span className="weather__value">  {this.props.pressure}</span>
+                    this.props.temperature && <p className="weather__key">Temperature:
+                       <span className="weather__value">  {this.props.temperature}&deg;F / C</span>
+                    </p>
+                }
+
+                {
+                    this.props.temp_min && <p className="weather__key">Temperature_Min:
+                        <span className="weather__value">  {this.props.temp_min}&deg;F</span>
+                    </p>
+                }
+
+                {
+                    this.props.humidity && <p className="weather__key">Humidity:
+                        <span className="weather__value">  {this.props.humidity}%</span>
+                    </p>
+                }
+
+                {
+                    this.props.visibility && <p className="weather__key">Visibility:
+                        <span className="weather__value">  {this.props.visibility}ft</span>
+                    </p>
+                }
+
+                {
+                    this.props.speed && <p className="weather__key">Windspeed:
+                        <span className="weather__value">  {this.props.speed}miles/hr</span>
                     </p>
                 }
 

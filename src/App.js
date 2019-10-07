@@ -7,7 +7,6 @@ import { BrowserRouter as Router} from 'react-router-dom';
 import Title from './components/Title';
 import WeatherInfo from './components/WeatherInfo';
 
-
 function App () {
 
 
