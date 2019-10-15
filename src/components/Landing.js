@@ -3,6 +3,9 @@ import React, {Component} from 'react';
 class Landing extends Component {
   render(){
     return (
+
+
+
   <div>
     <div class="row" id="headRow">
       <div class="col-md-12" id="colText">

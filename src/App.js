@@ -6,6 +6,7 @@ import{Route, Link} from 'react-router-dom';
 import { BrowserRouter as Router} from 'react-router-dom';
 import Title from './components/Title';
 import WeatherInfo from './components/WeatherInfo';
+import userLocation from './components/userLocation';
 
 function App () {
 
@@ -46,12 +47,12 @@ function App () {
     <Route path='/' component={Landing}/>
     </div>
 
+</div>
+
+)
 
 
-    </div>
-  )
-
-};
+}
 
 
 export default App;
