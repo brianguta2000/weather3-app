@@ -6,7 +6,7 @@ import{Route, Link} from 'react-router-dom';
 import { BrowserRouter as Router} from 'react-router-dom';
 import Title from './components/Title';
 import WeatherInfo from './components/WeatherInfo';
-import userLocation from './components/userLocation';
+import UserLocation from './components/UserLocation';
 
 function App () {
 
