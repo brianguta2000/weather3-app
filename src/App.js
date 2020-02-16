@@ -1,11 +1,9 @@
-<<<<<<< HEAD
+
 import React from "react";
 
 import Titles from "./components/Titles";
 import Form from "./components/Form";
 import Weather from "./components/Weather.js";
-=======
-import React from 'react';
 import './App.css';
 import Forecast from './components/Forecast';
 import Landing from './components/Landing';
@@ -16,11 +14,11 @@ import WeatherInfo from './components/WeatherInfo';
 import UserLocation from './components/UserLocation';
 
 function App () {
->>>>>>> ff252a63564a9697ec996695e60dbc9fb3f284a6
+
 
 const API_KEY = 'f2ec56db020648f18b8e19ae3fb1ac4d';
 
-<<<<<<< HEAD
+
 class App extends React.Component {
   state = {
     temperature: undefined,
@@ -87,8 +85,7 @@ class App extends React.Component {
    );
  }
 };
-=======
-  return (
+ return (
     <div className="App">
     <nav class="navbar navbar-default" id="nav_bar">
       <div class="container">
@@ -130,6 +127,6 @@ class App extends React.Component {
 
 
 }
->>>>>>> ff252a63564a9697ec996695e60dbc9fb3f284a6
+
 
 export default App;
